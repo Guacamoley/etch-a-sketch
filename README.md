@@ -32,7 +32,7 @@ Contributions are welcome! Feel free to fork this project, make improvements, an
 
 ## License
 
-This project is licensed under the [License](LICENSE).
+This project is licensed under the [Do What The F*ck You Want To Public License (WTFPL)](LICENSE.md). You are free to do whatever the f*ck you want with this code.
 
 ---
 
