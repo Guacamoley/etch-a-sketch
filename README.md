@@ -23,8 +23,8 @@ This Etch-a-Sketch project is part of The Odin Project's curriculum, designed to
 
 - `index.html`: The main HTML file for the project.
 - `styles.css`: The CSS file for styling the Etch-a-Sketch.
-- `script.js`: The JavaScript file containing the drawing functionality.
-- `images/`: Folder for storing project images (if any).
+- `etchasketch.js`: The JavaScript file containing the drawing functionality.
+- `resources/`: Folder for storing project images (if any).
 
 ## Contributing
 
