@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="etchasketch.js" defer></script>
     <link rel="icon" type="image/x-icon" href="resources/headIcon.png">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
 
 <body>
@@ -17,19 +17,20 @@
     </header>
     <main class="main">
         <div class="settings">
-            <input type="colorPicker" type="color" value="#333333">
-            <button id="colorButton">Color Mode</button>
-            <button id="rainbowButton">Rainbow Mode</button>
-            <button id="eraserButton">Eraser</button>
-            <button id="clearButton">Clear</button>
+            <input type="colorPicker" class="padding" type="color" value="#333333">
+            <button id="colorButton" class="padding">Color Mode</button>
+            <button id="rainbowButton" class="padding">Rainbow Mode</button>
+            <button id="eraserButton" class="padding">Eraser</button>
+            <button id="clearButton" class="padding">Clear</button>
             <div id="gridSize">16 x 16</div>
             <input type="range" id="sizeSlider" value="16" min="1" max="64">
         </div>
-        <div class="grid"></div>
+        <div class="container" id="grid-container"></div>
     </main>
     <footer class="footer">
-        <p>Copyright &copy; 2023 Guacamoley</p>
-        <a href="https://www.flaticon.com/free-icons/paint-brush" title="paint brush icons">Paint brush icons created by
+        <p class="footer-copyright">Copyright &copy; 2023 Guacamoley</p>
+        <a class="footer-copyright" href="https://www.flaticon.com/free-icons/paint-brush"
+            title="paint brush icons">Paint brush icons created by
             Freepik - Flaticon</a>
     </footer>
 </body>

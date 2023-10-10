@@ -22,7 +22,7 @@ This Etch-a-Sketch project is part of The Odin Project's curriculum, designed to
 ## Project Structure
 
 - `index.html`: The main HTML file for the project.
-- `styles.css`: The CSS file for styling the Etch-a-Sketch.
+- `style.css`: The CSS file for styling the Etch-a-Sketch.
 - `etchasketch.js`: The JavaScript file containing the drawing functionality.
 - `resources/`: Folder for storing project images (if any).
 
@@ -32,7 +32,7 @@ Contributions are welcome! Feel free to fork this project, make improvements, an
 
 ## License
 
-This project is licensed under the [Do What The F*ck You Want To Public License (WTFPL)](LICENSE). You are free to do whatever the f*ck you want with this code.
+This project is licensed under the [Do What The F\*ck You Want To Public License (WTFPL)](LICENSE). You are free to do whatever the f\*ck you want with this code.
 
 ---
 
