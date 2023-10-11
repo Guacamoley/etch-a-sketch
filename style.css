@@ -12,7 +12,7 @@ header {
     width: calc(100% / var(--columns));
     height: calc(100% / var(--rows));
     box-sizing: border-box;
-    border: 1px solid #CCCCCC; 
+    /* border: 1px solid #CCCCCC;  */
     display: flex;
     align-items: center;
     justify-content: center;

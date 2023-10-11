@@ -27,9 +27,18 @@ function makeGrid(rows, columns) {
 
   function draw(event) {
     if (isDrawing) {
-      const color = getColor();
+      const color = isRainbowMode ? getRandomColor() : getColor();
       event.target.style.backgroundColor = color;
     }
+  }
+
+  function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 
   function getColor() {
@@ -37,15 +46,18 @@ function makeGrid(rows, columns) {
     return colorPicker.value;
   }
 
-  // Add event listeners for the mode buttons (color, rainbow, eraser) and clear button.
+  let isColorMode = false;
+
   const colorButton = document.getElementById("colorButton");
   colorButton.addEventListener("click", () => {
-    // Implement color mode functionality.
+    isRainbowMode = false;
   });
+
+  let isRainbowMode = false;
 
   const rainbowButton = document.getElementById("rainbowButton");
   rainbowButton.addEventListener("click", () => {
-    // Implement rainbow mode functionality.
+    isRainbowMode = !isRainbowMode;
   });
 
   const eraserButton = document.getElementById("eraserButton");
