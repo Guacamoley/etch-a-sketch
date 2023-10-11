@@ -22,8 +22,8 @@ header {
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 700px;
     height: 700px;
+    width:700px;
     border: 1px solid #000;
 }
 

@@ -1,8 +1,12 @@
 function makeGrid(rows, columns) {
+  const sizeSlider = document.getElementById("sizeSlider");
   const container = document.getElementById("grid-container");
   const gridSizeDiv = document.getElementById("gridSize");
-  gridSizeDiv.textContent = `${rows} x ${columns}`;
 
+  // Clear the existing grid content by removing all child nodes
+  container.innerHTML = "";
+
+  gridSizeDiv.textContent = `${rows} x ${columns}`;
   container.style.setProperty("--rows", rows);
   container.style.setProperty("--columns", columns);
 
@@ -12,18 +16,9 @@ function makeGrid(rows, columns) {
     container.appendChild(gridSquare);
   }
 
-  const gridSquares = document.querySelectorAll(".grid-square");
   let isDrawing = false;
-
-  gridSquares.forEach((square) => {
-    square.addEventListener("mouseenter", draw);
-    square.addEventListener("mousedown", () => {
-      isDrawing = true;
-    });
-    square.addEventListener("mouseup", () => {
-      isDrawing = false;
-    });
-  });
+  let isEraserMode = false;
+  let isRainbowMode = false;
 
   function draw(event) {
     if (isDrawing) {
@@ -38,6 +33,7 @@ function makeGrid(rows, columns) {
       }
     }
   }
+
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -52,47 +48,52 @@ function makeGrid(rows, columns) {
     return colorPicker.value;
   }
 
-  const colorButton = document.getElementById("colorButton");
-  colorButton.addEventListener("click", () => {
-    isRainbowMode = false;
-    isEraserMode = false;
+  const gridSquares = document.querySelectorAll(".grid-square");
 
-    colorButton.classList.add("active-button");
-    rainbowButton.classList.remove("active-button");
-    eraserButton.classList.remove("active-button");
+  gridSquares.forEach((square) => {
+    square.addEventListener("mouseenter", draw);
+    square.addEventListener("mousedown", () => {
+      isDrawing = true;
+    });
+    square.addEventListener("mouseup", () => {
+      isDrawing = false;
+    });
   });
 
-  let isRainbowMode = false;
+  const colorButton = setupButton("colorButton");
+  const rainbowButton = setupButton("rainbowButton");
+  const eraserButton = setupButton("eraserButton");
 
-  const rainbowButton = document.getElementById("rainbowButton");
-  rainbowButton.addEventListener("click", () => {
-    isRainbowMode = true;
-    isEraserMode = false;
+  function setupButton(id) {
+    const button = document.getElementById(id);
+    button.addEventListener("click", () => {
+      isRainbowMode = id === "rainbowButton";
+      isEraserMode = id === "eraserButton";
 
-    colorButton.classList.remove("active-button");
-    rainbowButton.classList.add("active-button");
-    eraserButton.classList.remove("active-button");
-  });
+      colorButton.classList.remove("active-button");
+      rainbowButton.classList.remove("active-button");
+      eraserButton.classList.remove("active-button");
 
-  isEraserMode = false;
-
-  const eraserButton = document.getElementById("eraserButton");
-  eraserButton.addEventListener("click", () => {
-    isEraserMode = !isEraserMode;
-
-    colorButton.classList.remove("active-button");
-    rainbowButton.classList.remove("active-button");
-    eraserButton.classList.add("active-button");
-  });
+      button.classList.add("active-button");
+    });
+    return button;
+  }
 
   const clearButton = document.getElementById("clearButton");
   clearButton.addEventListener("click", clearGrid);
 
   function clearGrid() {
     gridSquares.forEach((square) => {
-      square.style.backgroundColor = "#F0F0F0"; // Set to the desired clear color.
+      square.style.backgroundColor = "#F0F0F0";
     });
   }
+
+  sizeSlider.addEventListener("input", () => {
+    const gridSize = sizeSlider.value;
+    gridSizeDiv.textContent = `${gridSize} x ${gridSize}`;
+    clearGrid();
+    makeGrid(gridSize, gridSize);
+  });
 }
 
 makeGrid(32, 32);
