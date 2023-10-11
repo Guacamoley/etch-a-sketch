@@ -51,6 +51,9 @@ function makeGrid(rows, columns) {
   const colorButton = document.getElementById("colorButton");
   colorButton.addEventListener("click", () => {
     isRainbowMode = false;
+    colorButton.classList.add("active-button");
+    rainbowButton.classList.remove("active-button");
+    eraserButton.classList.remove("active-button");
   });
 
   let isRainbowMode = false;
@@ -58,11 +61,16 @@ function makeGrid(rows, columns) {
   const rainbowButton = document.getElementById("rainbowButton");
   rainbowButton.addEventListener("click", () => {
     isRainbowMode = !isRainbowMode;
+    colorButton.classList.remove("active-button");
+    rainbowButton.classList.add("active-button");
+    eraserButton.classList.remove("active-button");
   });
 
   const eraserButton = document.getElementById("eraserButton");
   eraserButton.addEventListener("click", () => {
-    // Implement eraser mode functionality.
+    colorButton.classList.remove("active-button");
+    rainbowButton.classList.remove("active-button");
+    eraserButton.classList.add("active-button");
   });
 
   const clearButton = document.getElementById("clearButton");

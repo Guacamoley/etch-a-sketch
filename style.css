@@ -52,6 +52,22 @@ footer {
 
 .button {
     margin: 10px 0;
+    height: 75px;
+    width: 250px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.2s;
+}
+
+.button:hover {
+    transform: scale(1.05); /* Increase the scale (size) by 10% on hover */
+}
+
+.active-button {
+    background-color: #bbbbbb; 
+    color: rgb(0, 0, 0); 
+    transition: background-color 0.5s, transform 0.5s;
 }
 
 .color-picker {
