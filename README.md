@@ -6,6 +6,8 @@ This Etch-a-Sketch project is part of The Odin Project's curriculum, designed to
 
 ## Features
 
+To try out the project, you can access the live version at [LINK]([https://guacamoley.github.io/calculator/](https://guacamoley.github.io/etch-a-sketch/)).
+
 - Draw on the canvas using your mouse cursor.
 - Choose from various colors.
 - Rainbow brush color.
