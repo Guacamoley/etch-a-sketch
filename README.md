@@ -14,6 +14,7 @@ To try out the project, you can access the live version at [LINK](https://guacam
 - Grid resizing.
 - Clear the canvas to start a new drawing.
 - Have fun and get creative!
+- Note: This project may not work as effectively on mobile devices due to limitations related to dragging. For the best experience, it is recommended to use a desktop or laptop computer.
 
 ## Getting Started
 
