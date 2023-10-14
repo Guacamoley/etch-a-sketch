@@ -2,7 +2,7 @@
 
 ![Etch-a-Sketch](resources/demo.png)
 
-This Etch-a-Sketch project is part of The Odin Project's curriculum, designed to help you learn web development through hands-on experience. With this project, you can create a digital drawing application reminiscent of the classic Etch-a-Sketch toy.
+An interactive web drawing application inspired by the classic Etch A Sketch toy. Draw, choose colors, create a rainbow effect, and clear the canvas for a fresh start. Best experienced on desktop/laptop devices.
 
 ## Features
 
